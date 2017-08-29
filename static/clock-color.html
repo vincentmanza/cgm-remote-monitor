@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
   
-	<title>Nightscout</title>
+	<title>Sam's BG</title>
   
 	<link href="/images/round1.png" rel="icon" id="favicon" type="image/png" />
 	<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
@@ -54,8 +54,10 @@
 			display: flex;
 			-ms-flex-align: center;
 			-webkit-align-items: center;
+			-webkit-transform: translateX(1%);
 			align-items: center;
 			justify-content: center;
+			-webkit-flex-direction: column;
 			flex-direction: column;
 		}
 		#arrowDiv {
@@ -85,8 +87,9 @@
 		</div>
 	</main>
   
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/api/v1/status.js"></script>
-	<script src="/js/bundle.js?v=0.10.0-dev-20170821"></script>
+	<script src="/public/js/bundle.js"></script>
   
 	<script type="text/javascript">
 	
@@ -157,7 +160,7 @@
 			var staleMinutes = 13;										
 			var threshold = 1000 * 60 * staleMinutes;			
 			
-			// Restyle body bg, and make the "x minutes ago" visible too.
+			// Restyle body bg, and make the "x mins ago" visible too.
 			if (now - last > threshold) {
 				$('body').css('background-color', 'grey');
 				$('body').css('color', 'black');
